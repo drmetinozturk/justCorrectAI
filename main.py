@@ -18,7 +18,12 @@ model = genai.GenerativeModel(
 
 # 3. Streamlit Arayüzü
 st.set_page_config(page_title="JustCorrect", page_icon="✍️")
-st.title("✍️JustCorrect: Your Quick AI Proofreader")
+st.markdown(
+    '<h1 style="white-space: nowrap; font-size: 2.2rem; overflow: hidden; text-overflow: clip;">'
+    '✍️JustCorrect: Your Quick AI Proofreader'
+    '</h1>', 
+    unsafe_allow_html=True
+)
 st.markdown(
     '<p style="font-size: 24px; color: #EEEEEE; margin-top: -15px;">'
     'Corrects only spelling and grammatical errors; does not alter the style. <br> It is still your text—just without errors!'
