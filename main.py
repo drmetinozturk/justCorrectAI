@@ -20,15 +20,15 @@ model = genai.GenerativeModel(
 st.set_page_config(page_title="JustCorrect", page_icon="✍️")
 st.title("✍️JustCorrect: Your Quick AI Proofreader")
 st.markdown(
-    '<p style="font-size: 20px; color: #555555; margin-top: -15px;">'
+    '<p style="font-size: 24px; color: #555555; margin-top: -15px;">'
     'Corrects only spelling and grammatical errors; does not alter the style.'
     '</p>', 
     unsafe_allow_html=True
 )
 
-user_input = st.text_area("Please paste your text here:", height=250, placeholder="The text I want to correct is...")
+user_input = st.text_area("Please paste your text here:", height=250, placeholder="The text I want to correct is ...")
 
-if st.button("Correct the errors"):
+if st.button("Give me the corrected text"):
     if user_input.strip():
         with st.spinner("Working hard..."):
             try:
