@@ -19,7 +19,12 @@ model = genai.GenerativeModel(
 # 3. Streamlit Arayüzü
 st.set_page_config(page_title="JustCorrect", page_icon="✍️")
 st.title("✍️JustCorrect: Your Quick AI Proofreader")
-st.caption("Corrects only spelling and grammatical errors; does not alter the style.")
+st.markdown(
+    '<p style="font-size: 20px; color: #555555; margin-top: -15px;">'
+    'Corrects only spelling and grammatical errors; does not alter the style.'
+    '</p>', 
+    unsafe_allow_html=True
+)
 
 user_input = st.text_area("Please paste your text here:", height=250, placeholder="The text I want to correct is...")
 
