@@ -17,21 +17,21 @@ model = genai.GenerativeModel(
 )
 
 # 3. Streamlit Arayüzü
-st.set_page_config(page_title="AI Proofreader", page_icon="✍️")
-st.title("✍️ Hızlı Proofreader")
-st.caption("Sadece yazım ve dil bilgisi hatalarını düzeltir, üsluba dokunmaz.")
+st.set_page_config(page_title="JustCorrectAI", page_icon="✍️")
+st.title("✍️Your Quick and Trusted Proofreader")
+st.caption("Corrects only spelling and grammatical errors; does not alter the style.")
 
-user_input = st.text_area("Metni buraya yapıştırın:", height=250, placeholder="Düzeltilmesini istediğiniz metin...")
+user_input = st.text_area("Please paste your text here:", height=250, placeholder="The text I want to correct is...")
 
-if st.button("Hataları Ayıkla"):
+if st.button("Correct the errors):
     if user_input.strip():
-        with st.spinner("Düzeltiliyor..."):
+        with st.spinner("Working hard..."):
             try:
                 response = model.generate_content(user_input)
-                st.subheader("Sonuç:")
+                st.subheader("Output:")
                 st.success(response.text)
-                st.button("Sonucu Kopyala", on_click=lambda: st.write("Panoya kopyalandı (simüle)"))
+                st.button("Copy the output", on_click=lambda: st.write("Copied to clipboard"))
             except Exception as e:
-                st.error(f"Bir hata oluştu: {e}")
+                st.error(f"An error has occurred: {e}")
     else:
-        st.warning("Lütfen önce bir metin girin.")
+        st.warning("Please enter a text first.")
