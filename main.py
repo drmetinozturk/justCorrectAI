@@ -23,7 +23,7 @@ st.caption("Corrects only spelling and grammatical errors; does not alter the st
 
 user_input = st.text_area("Please paste your text here:", height=250, placeholder="The text I want to correct is...")
 
-if st.button("Correct the errors):
+if st.button("Correct the errors"):
     if user_input.strip():
         with st.spinner("Working hard..."):
             try:
