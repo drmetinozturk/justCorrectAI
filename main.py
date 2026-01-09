@@ -21,7 +21,7 @@ st.set_page_config(page_title="JustCorrect", page_icon="✍️")
 st.title("✍️JustCorrect: Your Quick AI Proofreader")
 st.markdown(
     '<p style="font-size: 24px; color: #555555; margin-top: -15px;">'
-    'Corrects only spelling and grammatical errors; does not alter the style. <br> <br>It is still your text—just free of errors!'
+    'Corrects only spelling and grammatical errors; does not alter the style. <br> It is still your text—just without errors!'
     '</p>', 
     unsafe_allow_html=True
 )
