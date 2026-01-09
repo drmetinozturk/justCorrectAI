@@ -26,7 +26,7 @@ st.markdown(
 )
 st.markdown(
     '<p style="font-size: 24px; color: #CCCCCC; margin-top: -15px;">'
-    'Corrects only spelling and grammatical errors; does not alter the style. <br> It is still your text—just without errors!'
+    'Corrects only spelling and grammatical errors; does not alter the style. <br> <b>It is still your text—just without errors!</b>'
     '</p>', 
     unsafe_allow_html=True
 )
