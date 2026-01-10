@@ -45,6 +45,8 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+user_input = st.text_area("Please paste your text here:", height=250, placeholder="The text I want to correct is ...")
+
 if st.button("Give me the corrected text"):
     if user_input.strip():
         with st.spinner("Working hard..."):
