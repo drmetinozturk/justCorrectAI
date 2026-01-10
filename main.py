@@ -44,3 +44,27 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
+if st.button("Give me the corrected text"):
+    if user_input.strip():
+        with st.spinner("Working hard..."):
+            try:
+                response = model.generate_content(user_input)
+                corrected_text = response.text.strip()
+                original_text = user_input.strip()
+
+                st.divider()
+                st.subheader("Output:")
+
+                # Değişiklik Kontrolü
+                if corrected_text == original_text:
+                    st.info("✅ NO CHANGES: Your text is already perfect!")
+                else:
+                    st.success("Changes applied successfully:")
+                    # Copy-paste kolaylığı için st.code kullanıyoruz (Kendinden kopyalama butonu vardır)
+                    st.code(corrected_text, language=None)
+            
+            except Exception as e:
+                st.error(f"An error has occurred: {e}")
+    else:
+        st.warning("Please enter a text first.")
